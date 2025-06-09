@@ -42,5 +42,5 @@ Web app ini dirancang untuk memprediksi tingkat risiko kesehatan mental seseoran
 1. **Clone repository ini:**
 
    ```bash
-   git clone https://github.com/username/mental-health-prediction.git
-   cd mental-health-prediction
+   git clone https://github.com/haydarzul/AI-Mental-Health-Predictor.git
+   cd AI-Mental-Health-Predictor
