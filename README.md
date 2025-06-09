@@ -13,7 +13,7 @@ Web app ini dirancang untuk memprediksi tingkat risiko kesehatan mental seseoran
 - Prediksi risiko dalam 3 level: **Rendah (Low)**, **Sedang (Medium)**, **Tinggi (High)**
 - Visualisasi data input pengguna dengan **Chart.js**
 - Dibangun dengan teknologi web ringan: Flask + Bootstrap
-- 🖥️ Live Demo: [ai-mental-health-predictor-production.up.railway.app](ai-mental-health-predictor-production.up.railway.app)  
+- 🖥️ Live Demo: [Coba Sekarang!](https://ai-mental-health-predictor-production.up.railway.app/)
 
 ---
 
