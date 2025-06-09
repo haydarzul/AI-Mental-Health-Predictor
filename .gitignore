@@ -1,0 +1,30 @@
+# Folder virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# VS Code settings
+.vscode/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+
+# Log and system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Flask-related
+instance/
+*.db
+
+# Environment variable or config (jika ada)
+.env
+
+# Jupyter Notebook checkpoints (jika digunakan)
+.ipynb_checkpoints/

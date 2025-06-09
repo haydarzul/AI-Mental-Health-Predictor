@@ -1,0 +1,22 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: 500;
+}
+
+.alert {
+    font-size: 1.2rem;
+}
+
+small.form-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
