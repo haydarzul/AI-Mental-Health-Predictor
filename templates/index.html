@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Prediksi Risiko Kesehatan Mental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- penting untuk responsif -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body class="bg-light">
-  <div class="container mt-5">
+  <div class="container mt-5 px-2 px-md-0">
     <h2 class="text-center mb-4">Form Prediksi Risiko Kesehatan Mental</h2>
     <form method="POST" class="p-4 shadow rounded bg-white">
       <div class="row g-3">
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Usia</label>
           <input type="number" name="age" class="form-control" required>
           <small class="form-text text-muted">Masukkan usia Anda dalam tahun.</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Gender</label>
           <select name="gender" class="form-select">
             <option>Male</option>
@@ -28,7 +29,7 @@
           <small class="form-text text-muted">Pilih jenis kelamin Anda.</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Status Pekerjaan</label>
           <select name="employment_status" class="form-select">
             <option>Employed</option>
@@ -39,7 +40,7 @@
           <small class="form-text text-muted">Pilih status pekerjaan Anda saat ini.</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Lingkungan Kerja</label>
           <select name="work_environment" class="form-select">
             <option>Remote</option>
@@ -49,7 +50,7 @@
           <small class="form-text text-muted">Pilih lingkungan kerja Anda.</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Riwayat Kesehatan Mental</label>
           <select name="mental_health_history" class="form-select">
             <option>Yes</option>
@@ -58,7 +59,7 @@
           <small class="form-text text-muted">Apakah Anda memiliki riwayat gangguan mental?</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Pernah Mencari Bantuan Profesional?</label>
           <select name="seeks_treatment" class="form-select">
             <option>Yes</option>
@@ -67,43 +68,43 @@
           <small class="form-text text-muted">Apakah Anda pernah berkonsultasi dengan profesional?</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Tingkat Stres (0–10)</label>
           <input type="number" name="stress_level" class="form-control" required min="0" max="10">
           <small class="form-text text-muted">Skor 0 (tidak stres) hingga 10 (sangat stres).</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Jam Tidur per Hari</label>
           <input type="number" step="0.1" name="sleep_hours" class="form-control" required>
           <small class="form-text text-muted">Masukkan jam tidur rata-rata Anda per hari.</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Aktivitas Fisik per Minggu (hari)</label>
           <input type="number" name="physical_activity_days" class="form-control" required>
           <small class="form-text text-muted">Berapa hari dalam seminggu Anda berolahraga?</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Skor Depresi</label>
           <input type="number" name="depression_score" class="form-control" required>
           <small class="form-text text-muted">0 - 30 (Semakin tinggi, menunjukkan gejala depresi lebih berat).</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Skor Kecemasan</label>
           <input type="number" name="anxiety_score" class="form-control" required>
           <small class="form-text text-muted">0 - 30 (Semakin tinggi, semakin cemas).</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Skor Dukungan Sosial</label>
           <input type="number" name="social_support_score" class="form-control" required>
           <small class="form-text text-muted">0 - 100 (Skor tinggi berarti dukungan sosial yang kuat).</small>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-12 col-md-4">
           <label>Skor Produktivitas</label>
           <input type="number" step="0.1" name="productivity_score" class="form-control" required>
           <small class="form-text text-muted">0 - 100 (Produktivitas dalam pekerjaan/aktivitas sehari-hari).</small>
@@ -122,16 +123,17 @@
         {% elif prediction == 'Medium' %}alert-warning
         {% elif prediction == 'High' %}alert-danger
         {% else %}alert-secondary{% endif %}">
+
         <strong>Hasil Prediksi:</strong> Tingkat Kesehatan Mental anda Tergolong <strong>
-            {% if prediction == 'Low' %}
-                Rendah (Low)
-            {% elif prediction == 'Medium' %}
-                Sedang (Medium)
-            {% elif prediction == 'High' %}
-                Tinggi (High)
-            {% else %}
-                Tidak Diketahui
-            {% endif %}
+          {% if prediction == 'Low' %}
+              Rendah (Low)
+          {% elif prediction == 'Medium' %}
+              Sedang (Medium)
+          {% elif prediction == 'High' %}
+              Tinggi (High)
+          {% else %}
+              Tidak Diketahui
+          {% endif %}
         </strong>.
       </div>
 
@@ -142,67 +144,67 @@
     {% endif %}
 
     <div id="form-data"
-       data-stress="{{ request.form.get('stress_level', 0) }}"
-       data-sleep="{{ request.form.get('sleep_hours', 0) }}"
-       data-activity="{{ request.form.get('physical_activity_days', 0) }}"
-       data-depression="{{ request.form.get('depression_score', 0) }}"
-       data-anxiety="{{ request.form.get('anxiety_score', 0) }}"
-       data-support="{{ request.form.get('social_support_score', 0) }}"
-       data-productivity="{{ request.form.get('productivity_score', 0) }}">
-  </div>
+         data-stress="{{ request.form.get('stress_level', 0) }}"
+         data-sleep="{{ request.form.get('sleep_hours', 0) }}"
+         data-activity="{{ request.form.get('physical_activity_days', 0) }}"
+         data-depression="{{ request.form.get('depression_score', 0) }}"
+         data-anxiety="{{ request.form.get('anxiety_score', 0) }}"
+         data-support="{{ request.form.get('social_support_score', 0) }}"
+         data-productivity="{{ request.form.get('productivity_score', 0) }}">
+    </div>
 
+  </div> <!-- end container -->
 
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const container = document.getElementById("form-data");
-  if (container) {
-    const data = {
-      stress: parseFloat(container.dataset.stress),
-      sleep: parseFloat(container.dataset.sleep),
-      activity: parseFloat(container.dataset.activity),
-      depression: parseFloat(container.dataset.depression),
-      anxiety: parseFloat(container.dataset.anxiety),
-      support: parseFloat(container.dataset.support),
-      productivity: parseFloat(container.dataset.productivity),
-    };
+  <script>
+    const container = document.getElementById("form-data");
+    if (container) {
+      const data = {
+        stress: parseFloat(container.dataset.stress),
+        sleep: parseFloat(container.dataset.sleep),
+        activity: parseFloat(container.dataset.activity),
+        depression: parseFloat(container.dataset.depression),
+        anxiety: parseFloat(container.dataset.anxiety),
+        support: parseFloat(container.dataset.support),
+        productivity: parseFloat(container.dataset.productivity),
+      };
 
-    const ctx = document.getElementById('inputChart').getContext('2d');
-    const inputChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Stress', 'Sleep (hrs)', 'Activity (days)', 'Depression', 'Anxiety', 'Support', 'Productivity'],
-        datasets: [{
-          label: 'Skor Anda',
-          data: [
-            data.stress,
-            data.sleep,
-            data.activity,
-            data.depression,
-            data.anxiety,
-            data.support,
-            data.productivity
-          ],
-          backgroundColor: [
-            '#dc3545', '#0d6efd', '#20c997', '#ffc107', '#fd7e14', '#198754', '#6f42c1'
-          ],
-          borderRadius: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Skor'
+      const ctx = document.getElementById('inputChart').getContext('2d');
+      const inputChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Stress', 'Sleep (hrs)', 'Activity (days)', 'Depression', 'Anxiety', 'Support', 'Productivity'],
+          datasets: [{
+            label: 'Skor Anda',
+            data: [
+              data.stress,
+              data.sleep,
+              data.activity,
+              data.depression,
+              data.anxiety,
+              data.support,
+              data.productivity
+            ],
+            backgroundColor: [
+              '#dc3545', '#0d6efd', '#20c997', '#ffc107', '#fd7e14', '#198754', '#6f42c1'
+            ],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Skor'
+              }
             }
           }
         }
-      }
-    });
-  }
-</script>
+      });
+    }
+  </script>
 </body>
 </html>
